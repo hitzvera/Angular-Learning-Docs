@@ -20,7 +20,7 @@ let sum = numbers.reduce((a, b) => a + b, 0);
 console.log(moreThanThree, sum);
 let blue = "BLUE" /* Color.BLUE */;
 console.log(blue);
-// tupples
+// tuples
 let swapNumbers;
 const swap = (a, b) => [b, a];
 swapNumbers = swap(1, 2);
