@@ -11,6 +11,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _Employee_id;
+Object.defineProperty(exports, "__esModule", { value: true });
 class Employee {
     constructor(id, name, address) {
         // private property
@@ -22,6 +23,14 @@ class Employee {
     }
     getNameWithAddress() {
         return `employee ${this.name} from ${this.address}`;
+    }
+    login() {
+        return {
+            id: __classPrivateFieldGet(this, _Employee_id, "f"),
+            name: this.name,
+            email: "X2I6j@example.com",
+            age: 20
+        };
     }
     get id() {
         return __classPrivateFieldGet(this, _Employee_id, "f");
@@ -40,12 +49,12 @@ class Manager extends Employee {
         return `Manager ${this.name} from ${this.address}`;
     }
 }
-let john = new Employee(1, "John", "Bandung");
+let john = new Employee(1, "John", { country: "Indonesia", city: "Bandung" });
 // john.id will not be able to access because private
 // john.name will not be able to access because protected (only available inside class and inherited class)
 console.log(john.getNameWithAddress());
 john.id = 2;
 console.log(john.id);
-let manager = new Manager(1, "Mujahid", "Bandung");
+let manager = new Manager(1, "Mujahid", { country: "Indonesia", city: "Bandung" });
 console.log(manager.getNameWithAddress());
 console.log(Employee.employeeCount);
